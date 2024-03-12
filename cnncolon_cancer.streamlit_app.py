@@ -37,6 +37,7 @@ def predict_class(image):
     image_class=class_names[np.argmax(scores)]
     result= "the image uploaded is: {}".format(image_class)
     return result
-if _ _ name _ _== "_ _main_ _":
-   main()
+if __name__ == "__main__":
+    main()
+   
  
