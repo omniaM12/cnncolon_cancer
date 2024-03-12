@@ -2,11 +2,11 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import os
+import tensorflow as tf
 from tensorflow.keras.activations import softmax
 from PIL import Image, ImageOps
 import matplotlib.pyplot as plt
 from tensorflow.keras import preprocessing
-import tensorflow as tf
 from tensorflow.keras.models import load_model
 import h5py
 
