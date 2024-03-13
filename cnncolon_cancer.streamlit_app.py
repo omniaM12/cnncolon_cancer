@@ -4,12 +4,11 @@ import numpy as np
 from PIL import Image
  
 
-model = model
+model =""
 
 
 
-
-st.title("tumor or not")
+st.title("colon tumor or normal")
 
 file_name = st.file_uploader("Upload a histopathology image")
 
