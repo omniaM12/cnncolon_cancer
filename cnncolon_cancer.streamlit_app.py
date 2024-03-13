@@ -16,6 +16,7 @@ if file_name is not None:
     col1, col2 = st.columns(2)
 
     image = Image.open(file_name)
+    image=image/255
     col1.image(image, use_column_width=True)
     predictions = model.predict(image)
 
