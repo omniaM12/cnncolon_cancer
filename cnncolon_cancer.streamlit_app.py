@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from transformers import pipeline
+from sklearn.pipeline import Pipeline
 from PIL import Image
 
 
@@ -10,7 +10,7 @@ import streamlit as st
 from transformers import pipeline
 from PIL import Image
 
-pipeline = pipeline(task="image-classification", model=model)
+pipeline = Pipeline(task="image-classification", model=model)
 
 st.title("tumor or not")
 
@@ -21,7 +21,7 @@ if file_name is not None:
 
     image = Image.open(file_name)
     col1.image(image, use_column_width=True)
-    predictions = pipeline(image)
+    predictions = Pipeline(image)
 
     col2.header("Probabilities")
     for p in predictions:
