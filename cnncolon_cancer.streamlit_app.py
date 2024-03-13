@@ -10,7 +10,7 @@ import streamlit as st
 from transformers import pipeline
 from PIL import Image
 
-pipeline = pipeline(task="image-classification", model")
+pipeline = pipeline(task="image-classification", model=model)
 
 st.title("tumor or not")
 
