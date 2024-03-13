@@ -2,10 +2,9 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-import joblib
+ 
 
-
-model = joblib.load('model')
+model ="v.0.1.0-model"
 import streamlit as st
 from transformers import pipeline
 from PIL import Image
