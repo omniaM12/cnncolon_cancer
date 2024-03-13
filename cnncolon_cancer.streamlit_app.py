@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-from sklearn.pipeline import Pipeline
 from PIL import Image
 
 
@@ -10,18 +9,18 @@ import streamlit as st
 from transformers import pipeline
 from PIL import Image
 
-pipeline = Pipeline(task="image-classification", model=model)
+
 
 st.title("tumor or not")
 
-file_name = st.file_uploader("Upload a hot dog candidate image")
+file_name = st.file_uploader("Upload a histopathology image")
 
 if file_name is not None:
     col1, col2 = st.columns(2)
 
     image = Image.open(file_name)
     col1.image(image, use_column_width=True)
-    predictions = Pipeline(image)
+    predictions = model(image)
 
     col2.header("Probabilities")
     for p in predictions:
