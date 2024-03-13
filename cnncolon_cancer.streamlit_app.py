@@ -4,7 +4,7 @@ import numpy as np
 from PIL import Image
  
 
-model = r "releases/tag/v.0.1.0-model"
+model = v.0.1.0-model
 
 
 
