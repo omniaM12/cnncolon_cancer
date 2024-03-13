@@ -19,7 +19,7 @@ if file_name is not None:
 
     image = Image.open(file_name)
     col1.image(image, use_column_width=True)
-    predictions = model(image)
+    predictions = model.predict(image)
 
     col2.header("Probabilities")
     for p in predictions:
