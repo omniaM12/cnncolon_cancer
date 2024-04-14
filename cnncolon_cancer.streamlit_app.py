@@ -17,7 +17,7 @@ if file_name is not None:
 
     img = Image.open(file_name)
     col1.image(img, use_column_width=True)
-    img = img.img_to_array(img)
+    img = img_to_array(img)
     img = np.expand_dims(img, axis=0)
     img /= 255
     predictions = model.predict(img)[0][0]
