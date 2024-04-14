@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 from PIL import Image
-from tensorflow.keras.preprocessing import image
  
 
 model ="model.keras"
@@ -18,7 +17,7 @@ if file_name is not None:
 
     img = Image.open(file_name)
     col1.image(img, use_column_width=True)
-    img = image.img_to_array(img)
+    img = img.img_to_array(img)
     img = np.expand_dims(img, axis=0)
     img /= 255
     predictions = model.predict(img)[0][0]
