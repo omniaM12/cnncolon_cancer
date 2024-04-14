@@ -15,9 +15,17 @@ file_name = st.file_uploader("Upload a histopathology image")
 if file_name is not None:
     col1, col2 = st.columns(2)
 
-    image = Image.open(file_name)
-    col1.image(image, use_column_width=True)
-    predictions = model.predict(image)
+    img = Image.open(file_name)
+    col1.image(img, use_column_width=True)
+    img = image.img_to_array(img)
+    img = np.expand_dims(img, axis=0)
+    img /= 255
+    predictions = model.predict(img)[0][0]
+    if pred <= 0.5:
+        result = 'Predicted : normal'
+    else:
+        result = 'Predicted : tumor'
+
 
     col2.header("Probabilities")
     for p in predictions:
